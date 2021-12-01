@@ -6,7 +6,6 @@ typealias DayOneFunction = (items: List<Int>) -> Int
 
 fun dayOne(filename: String, f: DayOneFunction = ::findIncreases): Int = f(readFile(filename).map { it.toInt() })
 
-
 fun findIncreases(items: List<Int>): Int = (0 until items.size - 1).foldIndexed(initial = 0) { i, acc, _ ->
     acc + if (isIncreasing(items[i], items[i + 1])) 1 else 0
 }
